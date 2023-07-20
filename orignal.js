@@ -26,3 +26,28 @@ var ajaxCall = (key, url, prompt) => {
       },
     });
   });
+};
+
+const url = "https://api.openai.com/v1";
+
+(function () {
+  const template = document.createElement("template");
+  template.innerHTML = `
+      <style>
+      </style>
+      <div id="root" style="width: 100%; height: 100%;">
+      </div>
+    `;
+  class MainWebComponent extends HTMLElement {
+    async post(apiKey, endpoint, prompt) {
+      const { response } = await ajaxCall(
+        apiKey,
+        `${url}/${endpoint}`,
+        prompt
+      );
+      //console.log(response.choices[0].text);
+      return response.choices[0].text;
+    }
+  }
+  customElements.define("custom-widget", MainWebComponent);
+})();
