@@ -5,12 +5,11 @@ var ajaxCall = (key, url, prompt) => {
       type: "POST",
       dataType: "json",
       data: JSON.stringify({
-        model: "davinci:ft-sacchatgpt-2023-08-13-14-07-02",
+        model: "davinci:ft-sacchatgpt-2023-07-13-11-11-59",
         prompt: prompt,
-        max_tokens: 512,
+        max_tokens: 1024,
         n: 1,
-		stop: None,
-        temperature: 0,
+        temperature: 0.5,
       }),
       headers: {
         "Content-Type": "application/json",
