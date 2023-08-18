@@ -9,7 +9,7 @@ var ajaxCall = (key, url, prompt) => {
         prompt: prompt,
         max_tokens: 512,
         n: 1,
-		stop = None,
+		stop: None,
         temperature: 0,
       }),
       headers: {
